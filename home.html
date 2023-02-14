@@ -1,15 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
-</head>
-<body>
+    <title>Welcome poorGuy</title>
+  </head>
+
+  <body>
     <header>
-        <h1 class="text-5xl text-center font-semibold">Welcome to <span class="text-blue-700">Baper Bank!!</span></h1>
+      <h1 class="text-5xl text-center font-semibold">
+        Give <span class="text-green-400 font-bold">Money </span>to get
+        <span class="text-green-400 font-bold">Money 💸</span>
+      </h1>
     </header>
-</body>
+    <main>
+      <section
+        class="grid lg:grid-cols-3 max-w-4xl lg:mx-auto justify-items-center place-items-center gap-3 mt-12"
+      >
+        <div class="w-60 bg-purple-700 p-6 space-y-4 rounded-lg">
+          <h1 class="font-semibold text-xl text-white">Deposit</h1>
+          <h2 class="font-semibold text-4xl text-white">$<span id="deposit-total">00</span> </h2>
+        </div>
+        <div class="w-60 bg-pink-600 p-6 space-y-4 rounded-lg">
+          <h1  class="font-semibold text-xl text-white">Withdraw</h1>
+          <h2 class="font-semibold text-4xl text-white">$<span id="withdraw-text">00</span> </h2>
+        </div>
+        <div class="w-60 bg-blue-400 p-6 space-y-4 rounded-lg">
+          <h1 id="total-balance" class="font-semibold text-xl text-white">Balance</h1>
+          <h2 class="font-semibold text-4xl text-white">$<span id="main-balance">1245</span> </h2>
+        </div>
+      </section>
+
+      <!-- Deposit withdraw -->
+
+      <section class="max-w-4xl mx-auto grid place-items-center gap-2 lg:grid-cols-2 mt-10">
+        <div class="w-96 text-white bg-teal-600 p-5 space-y-5 rounded-lg">
+          <h1 class="text-3xl">Deposit</h1>
+          <input
+            class="py-2 outline-none  rounded-sm px-4 text-black"
+            type="text"
+            id="deposit-amount"
+            placeholder="Enter amount"
+          />
+          <br>
+          <button id="deposit-btn" class="bg-slate-700 py-3 transition-all hover:bg-slate-800 px-5 font-semibold rounded-md">Deposit</button>
+        </div>
+        <div class="w-96 text-white bg-green-400 p-5 space-y-5 rounded-lg">
+          <h1 class="text-3xl">Withdraw</h1>
+          <input
+            class="py-2 outline-none rounded-sm px-4 text-black"
+            type="text"
+            id="withdraw-input"
+            placeholder="Enter amount"
+          />
+          <br>
+          <button id="withdraw-btn" class="bg-slate-700 transition-all hover:bg-slate-800 py-3 px-5 font-semibold rounded-md">Withdraw</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/counting.js"></script>
+  </body>
 </html>
