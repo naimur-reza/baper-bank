@@ -17,24 +17,38 @@ const depoBtn = document.getElementById('deposit-btn').addEventListener('click',
     const oldBalance = parseFloat(oldBalanceString);
     const newBalance = oldBalance + currentDeposit;
     balanceString.innerText = newBalance;
-    
+    depositId.value = '';    
 })
 
 
 const withdrawButton = document.getElementById('withdraw-btn').addEventListener('click',function(){
+
+
+    //withdraw add 
     const withdrawInput = document.getElementById('withdraw-input')
     const withdrawInputString = withdrawInput.value;
     const withdrawInputValue = parseFloat(withdrawInputString)
     const mainBalance = document.getElementById('main-balance')
     const oldBalanceString = mainBalance.innerText;
     const oldBalance = parseFloat (oldBalanceString);
+
+
+
+    // Make a condition 
+    if(withdrawInputValue > oldBalance){
+        alert ("Insuficient balance")
+        withdrawInput.value = '';
+        return;
+    }
+ 
     const finalBalance = oldBalance - withdrawInputValue;
     mainBalance.innerText = finalBalance;
 
-    //withdraw add 
     const updateWithdraw = document.getElementById('withdraw-text')
     const withdrawNumberString = updateWithdraw.innerText;
     const withdrawAmountNumber = parseFloat (withdrawNumberString)
     const withdrawAmount = withdrawInputValue + withdrawAmountNumber
     updateWithdraw.innerText = withdrawAmount;
+    withdrawInput.value = '';
+
 })
