@@ -13,7 +13,7 @@ const depoBtn = document.getElementById('deposit-btn').addEventListener('click',
             newDepositInputString.value = '';
             return;
         }
-        
+
     const currentDeposit = PreviousDepositAmount + newDepositInput;
     console.log(currentDeposit);
     depositTotal.innerText = currentDeposit;
@@ -49,7 +49,7 @@ const withdrawButton = document.getElementById('withdraw-btn').addEventListener(
 
     // Make a condition 
     if(withdrawInputValue > oldBalance){
-        alert ("Insuficient balance")
+        alert ("Insufficient balance")
         withdrawInput.value = '';
         return;
     }
