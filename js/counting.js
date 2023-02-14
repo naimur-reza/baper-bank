@@ -7,10 +7,16 @@ const depoBtn = document.getElementById('deposit-btn').addEventListener('click',
     const PreviousDepositAmount = parseFloat (PreviousDepositAmountString)
     const newDepositInputString = depositId.value;
     const newDepositInput = parseFloat (newDepositInputString)
+        //error check
+        if (isNaN(newDepositInput)){
+            alert ("please enter a valid number")
+            newDepositInputString.value = '';
+            return;
+        }
+        
     const currentDeposit = PreviousDepositAmount + newDepositInput;
     console.log(currentDeposit);
     depositTotal.innerText = currentDeposit;
-
     //balance
     const balanceString = document.getElementById('main-balance')
     const oldBalanceString = balanceString.innerText;
@@ -18,6 +24,9 @@ const depoBtn = document.getElementById('deposit-btn').addEventListener('click',
     const newBalance = oldBalance + currentDeposit;
     balanceString.innerText = newBalance;
     depositId.value = '';    
+
+
+
 })
 
 
@@ -32,7 +41,11 @@ const withdrawButton = document.getElementById('withdraw-btn').addEventListener(
     const oldBalanceString = mainBalance.innerText;
     const oldBalance = parseFloat (oldBalanceString);
 
-
+    if (isNaN(withdrawInputValue)){
+        alert ("please enter a valid number")
+        withdrawInput.value = '';
+        return;
+    }
 
     // Make a condition 
     if(withdrawInputValue > oldBalance){
